@@ -20,4 +20,4 @@ setInterval(() => {
   imgs[index].classList.remove("active");
   index = (index + 1) % imgs.length;
   imgs[index].classList.add("active");
-}, 1500);
+}, 2500);
