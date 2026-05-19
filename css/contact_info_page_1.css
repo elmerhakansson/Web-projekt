@@ -1,0 +1,97 @@
+/* contact_info_page_1.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Courier New", Courier, monospace;
+  background: #fff;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: clamp(20px, 4vw, 40px);
+}
+
+.header .logo {
+  width: clamp(140px, 30vw, 250px);
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.header .nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+}
+
+.header .nav a:hover {
+  text-decoration: underline;
+}
+
+.header .nav a.active {
+  font-weight: bold;
+}
+
+/* CONTENT */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TEXTBOX */
+.textbox-container {
+  width: min(900px, 100%);
+  min-height: clamp(220px, 40vh, 350px);
+  border: 3px solid #000;
+  padding: clamp(12px, 2vw, 20px);
+  display: flex;
+}
+.textbox-container textarea {
+  width: 100%;
+  min-height: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: clamp(13px, 1.5vw, 16px);
+  font-family: "Courier New", Courier, monospace;
+}
+  
+@media (max-width: 1024px) {
+  .container {
+    gap: 25px;
+  }
+  .product-image,
+  .textbox {
+    max-width: 600px;
+  }
+  .textbox {
+    height: 450px;
+  }
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .product-image,
+  .textbox {
+    width: 100%;
+    max-width: 420px;
+  }
+  .textbox {
+    height: 280px;
+  }
+}
+
+/*# sourceMappingURL=contact_info_page_1.css.map */

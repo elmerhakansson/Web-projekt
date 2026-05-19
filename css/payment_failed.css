@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  background: #fff;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(20px, 4vw, 40px);
+}
+
+.logo {
+  width: clamp(140px, 30vw, 250px);
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.nav {
+  text-align: center;
+}
+
+.nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.nav a.active {
+  font-weight: bold;
+}
+
+/* Center main content */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;       /* half viewport height for vertical centering */
+    text-align: center;
+}
+
+/* Confirmation message */
+.order_confirmed {
+    font-family: 'Courier New', Courier, monospace; /* match site font */
+    font-size: 36px;
+    line-height: 1.5;
+}
+
+/* =========================
+   TABLET (≤ 1024px)
+========================= */
+@media (max-width: 1024px) {
+  body {
+    padding: 15px;
+  }
+
+  .logo {
+    max-width: 200px;
+  }
+
+  .nav a {
+    font-size: 15px;
+    margin: 0 8px;
+  }
+
+  .centered {
+    height: 60vh;
+  }
+
+  .order_confirmed {
+    font-size: 30px;
+  }
+}
+
+/* =========================
+   PHONE (≤ 768px)
+========================= */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .header {
+    margin-bottom: 25px;
+  }
+
+  .logo {
+    max-width: 160px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav a {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .centered {
+    height: auto;
+    min-height: 60vh;
+    padding: 20px 10px;
+  }
+
+  .order_confirmed {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+}

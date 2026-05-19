@@ -1,0 +1,101 @@
+$main-font: 'Courier New', Courier, monospace;
+$main-color: #000;
+$bg-color: #ffffff;
+$slider-width: 800px;
+$slider-height: 600px;
+$border-size: 3px;
+
+/* MIXIN */
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: $main-font;
+  background: $bg-color;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  .logo {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  .nav {
+    a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: $main-color;
+      font-family: $main-font;
+      font-size: 16px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Content */
+.content {
+  @include flex-center;
+}
+
+/* Slideshow */
+.slideshow {
+  width: $slider-width;
+  height: $slider-height;
+  border: $border-size solid $main-color;
+  @include flex-center;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+/* Page transition */
+#page-transition {
+  position: fixed;
+  inset: 0;
+  background: $bg-color;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 9999;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .bootstrap-zone {
+    all: revert;
+  }
+}
